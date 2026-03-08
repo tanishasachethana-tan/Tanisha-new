@@ -18,10 +18,16 @@ def main():
     print(f"\nStudent Name: {name}")
     print(f"Average Marks: {average:.2f}")
 
-    if average >= 40:
-        print("Result: Pass")
+    if average >= 75:
+        grade = "Grade A"
+    elif average >= 60:
+        grade = "Grade B"
+    elif average >= 40:
+        grade = "Grade C"
     else:
-        print("Result: Fail")
+        grade = "Fail"
+
+    print(f"Result: {grade}")
 
 if __name__ == "__main__":
     main()
