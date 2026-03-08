@@ -1,33 +1,37 @@
 def main():
-    # Ask for student's name
-    name = input("Enter student's name: ")
+    while True:
+        # Ask for student's name
+        name = input("Enter student's name (or type 'Exit' to quit): ")
 
-    # Ask for 3 subject marks
-    try:
-        mark1 = float(input("Enter marks for subject 1: "))
-        mark2 = float(input("Enter marks for subject 2: "))
-        mark3 = float(input("Enter marks for subject 3: "))
-    except ValueError:
-        print("Invalid input. Please enter numeric values for marks.")
-        return
+        if name == "Exit":
+            break
 
-    # Calculate the average
-    average = (mark1 + mark2 + mark3) / 3
+        # Ask for 3 subject marks
+        try:
+            mark1 = float(input("Enter marks for subject 1: "))
+            mark2 = float(input("Enter marks for subject 2: "))
+            mark3 = float(input("Enter marks for subject 3: "))
+        except ValueError:
+            print("Invalid input. Please enter numeric values for marks.")
+            continue
 
-    # Display the result
-    print(f"\nStudent Name: {name}")
-    print(f"Average Marks: {average:.2f}")
+        # Calculate the average
+        average = (mark1 + mark2 + mark3) / 3
 
-    if average >= 75:
-        grade = "Grade A"
-    elif average >= 60:
-        grade = "Grade B"
-    elif average >= 40:
-        grade = "Grade C"
-    else:
-        grade = "Fail"
+        # Display the result
+        print(f"\nStudent Name: {name}")
+        print(f"Average Marks: {average:.2f}")
 
-    print(f"Result: {grade}")
+        if average >= 75:
+            grade = "Grade A"
+        elif average >= 60:
+            grade = "Grade B"
+        elif average >= 40:
+            grade = "Grade C"
+        else:
+            grade = "Fail"
+
+        print(f"Result: {grade}\n")
 
 if __name__ == "__main__":
     main()
