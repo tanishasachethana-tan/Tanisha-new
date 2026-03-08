@@ -18,20 +18,22 @@ def main():
         # Calculate the average
         average = (mark1 + mark2 + mark3) / 3
 
-        # Display the result
-        print(f"\nStudent Name: {name}")
-        print(f"Average Marks: {average:.2f}")
-
+        # Determine the grade
         if average >= 75:
-            grade = "Grade A"
+            grade = "A"
         elif average >= 60:
-            grade = "Grade B"
+            grade = "B"
         elif average >= 40:
-            grade = "Grade C"
+            grade = "C"
         else:
             grade = "Fail"
 
-        print(f"Result: {grade}\n")
+        # Display the formatted result
+        print("-" * 30)
+        print(f"Name   : {name}")
+        print(f"Average: {average:.1f}")
+        print(f"Grade  : {grade}")
+        print("-" * 30 + "\n")
 
 if __name__ == "__main__":
     main()
